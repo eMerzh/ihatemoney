@@ -355,8 +355,8 @@ class Bill(db.Model):
     owers = db.relationship(Person, secondary=billowers)
 
     amount = db.Column(db.Float)
-    date = db.Column(db.Date, default=datetime.now)
-    creation_date = db.Column(db.Date, default=datetime.now)
+    date = db.Column(db.DateTime, default=datetime.now)
+    creation_date = db.Column(db.DateTime, default=datetime.now)
     what = db.Column(db.UnicodeText)
 
     archive = db.Column(db.Integer, db.ForeignKey("archive.id"))

@@ -102,8 +102,8 @@
     <tbody>
     {% for bill in bills %}
     <tr owers="{{bill.owers|join(',','id')}}" payer="{{bill.payer.id}}">
-            <td>{{ bill.creation_date if bill.creation_date else bill.date }}</td>
-            <td>{{ bill.date }}</td>
+            <td>{{ (bill.creation_date if bill.creation_date else bill.date).strftime('%Y-%m-%d') }}</td>
+            <td>{{ bill.date.strftime('%Y-%m-%d') }}</td>
             <td>{{ bill.payer }}</td>
             <td>{{ bill.what }}</td>
             <td>{{ bill.owers|join(', ', 'name') }} </td>
